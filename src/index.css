@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#02050f] text-slate-100 font-mono antialiased overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-200;
+  }
+}
+
+/* Custom NASA CRT Scanline Effect */
+.scanline-overlay {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 212, 255, 0.015) 2px,
+    rgba(0, 212, 255, 0.015) 4px
+  );
+  pointer-events: none;
+}
+
+/* Custom Scrollbar for HUD Panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(2, 5, 15, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.5);
+}
+
+/* Glowing text and borders */
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.7), 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.text-glow-green {
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.7), 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.text-glow-yellow {
+  text-shadow: 0 0 10px rgba(255, 204, 0, 0.7), 0 0 20px rgba(255, 204, 0, 0.3);
+}
+
+.text-glow-red {
+  text-shadow: 0 0 10px rgba(255, 51, 102, 0.7), 0 0 20px rgba(255, 51, 102, 0.3);
+}
+
+.glow-box-cyan {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.15), inset 0 0 15px rgba(0, 212, 255, 0.05);
+}
+
+.glow-box-green {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.18), inset 0 0 15px rgba(0, 255, 136, 0.05);
+}
+
+.glow-box-yellow {
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.18), inset 0 0 15px rgba(255, 204, 0, 0.05);
+}
+
+.glow-box-red {
+  box-shadow: 0 0 25px rgba(255, 51, 102, 0.25), inset 0 0 15px rgba(255, 51, 102, 0.08);
+}
+
+/* Radar ping animation */
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-sweep {
+  animation: radar-sweep 4s linear infinite;
+}
